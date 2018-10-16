@@ -1,0 +1,17 @@
+Changements : 
+	Constructeurs : couts ok?
+	sets et gets : sets et gets target?
+	logique des fonctions
+	friend class team dans guerrier/public
+	objet guerrier appelé guerrier dans team/private
+	
+Questions :
+	comment accéder aux attributs privés d'un guerrier : "guerrier::getVie()" ou "poulet::getVie()"?
+	librairie Maths pour calculs (ratios)?
+	guerrier.cpp > lignes 72, 73 : "get ou set?"
+	team.h > private : stockage du nombre de guerriers à t(0) et t(-1)?
+	Insérer un % en string dans cout?
+	
+To do 
+	Compteur des morts
+	main : décommenter progressivement à partir de ligne 35

@@ -1,0 +1,11 @@
+Changements
+	debriefing
+	
+To do
+	1. Rapport interne = Nb de guerrier / présentation au-dessus/en-dessous de la ligne
+	2. Attaque = *exécution* parcours toute la liste des guerriers. Si mon guerrier attaque, attaque celui au bout du pointeur en face	
+	3. Analyse = *réflexion* pointeur guerrier d'en face, choix architectural sur pointeur = NULL si mort ou pas?
+	4. kill guerrier à la fin du jeu pas avant (pérénité pointeurs, cycles vie/mort/posture
+
+Mot clé : singleton
+	
