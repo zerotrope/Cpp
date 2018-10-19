@@ -27,7 +27,7 @@ class team
 
         void creation();
         void analyse();
-        void attaquer();
+        void attaquer(team &target);
         void debriefing();
 
         std::string get_nom();

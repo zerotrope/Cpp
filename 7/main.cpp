@@ -25,18 +25,27 @@ int main()
     team *team_C;
 
     // Malloc
+/*    
     team_A = new team("Ketchup");
     team_B = new team("Mayo");
     team_C = new team();
+*/
+    team_A = new team("Ketchup", 10, 5, 5);
+    team_B = new team("Mayo", 10, 5, 5);
+    team_C = new team("Moutarde", 10, 5, 5);
 
     // Creation
+/*
     team_A->creation();
     team_B->creation();
     team_C->creation();
+*/
 
     team_A->debriefing();
     team_B->debriefing();
     team_C->debriefing();
+
+    //team_A->attaquer(*team_B);
 
 /*
     // Creation

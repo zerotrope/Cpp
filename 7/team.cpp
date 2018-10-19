@@ -17,20 +17,20 @@ using namespace std;
     team::team()
     {
         team::nom = "Default";
-        team::poulets = 0;
-        team::superpoulets = 0;
-        team::pandas = 0;
-        team::autruches = 0;
+        team::poulets = 10;
+        team::superpoulets = 1;
+        team::pandas = 5;
+        team::autruches = 5;
     }
 
     // Constructeur surchargé à 1 paramètre
     team::team(std::string _nom)
     {
         team::nom = _nom;
-        team::poulets = 0;
-        team::superpoulets = 0;
-        team::pandas = 0;
-        team::autruches = 0;
+        team::poulets = 10;
+        team::superpoulets = 1;
+        team::pandas = 5;
+        team::autruches = 5;
     }
 
     // Constructeur surchargé
@@ -122,11 +122,54 @@ using namespace std;
         */
     }
 
-    void team::attaquer()
+    void team::attaquer(team &target)
     {
-        /*
+        int i;
 
-        */
+        // from local team
+        int team_n = team::get_survivants();
+        int team_v = team::get_vie_totale();
+        int team_poulets_n = team::get_type(POULET);
+        int team_poulets_v = team::get_vie(POULET);
+        int team_superpoulets_n = team::get_type(SUPERPOULET);
+        int team_superpoulets_v = team::get_vie(SUPERPOULET);
+        int team_pandas_n = team::get_type(PANDA);
+        int team_pandas_v = team::get_vie(PANDA);
+        int team_autruches_n = team::get_type(AUTRUCHE);
+        int team_autruches_v = team::get_vie(AUTRUCHE);
+
+        // from target target
+        int target_n = target.get_survivants();
+        int target_v = target.get_vie_totale();
+        int target_poulets_n = target.get_type(POULET);
+        int target_poulets_v = target.get_vie(POULET);
+        int target_superpoulets_n = target.get_type(SUPERPOULET);
+        int target_superpoulets_v = target.get_vie(SUPERPOULET);
+        int target_pandas_n = target.get_type(PANDA);
+        int target_pandas_v = target.get_vie(PANDA);
+        int target_autruches_n = target.get_type(AUTRUCHE);
+        int target_autruches_v = target.get_vie(AUTRUCHE);
+
+        // from local method
+        int up_poulets = std::max(team_poulets_n, target_poulets_n);
+        int up_superpoulets = std::max(team_superpoulets_n, target_superpoulets_n);
+        int up_pandas = std::max(team_pandas_n, target_pandas_n);
+        int up_autruches = std::max(team_autruches_n, target_autruches_n);
+
+        // Sanity checks
+        cout << up_poulets << " poulets maximums" << endl;
+        cout << target.get_nom() << endl;
+
+        // Attack
+        std::vector<guerrier*>::iterator it;
+        for(it=team::liste.begin(); it!=team::liste.end(); ++it)
+        {
+           //team::liste[*it]->attaquer(target::liste[*it]);
+           //(*it)->attaquer(team::liste.at(it));
+
+           cout << team_n << " survivants" << endl;
+        }
+
     }
 
     void team::debriefing()
@@ -164,8 +207,8 @@ using namespace std;
         cout << endl;
         cout << "---------------RAPPORT INTERNE---------------" << endl;
         cout << team::get_nom() << "\t\t\tSurvivants\tVie" << endl;
-        cout << "---------------------------------------------" << endl;
         cout << team::get_survivants() << " Guerriers" << "\t\t\t" << ratio_team_n << "\%\t" << ratio_team_v << "\%" << endl;
+        cout << "---------------------------------------------" << endl;
         cout << " " << team::get_type(POULET) << " Poulets\t\t\t" <<  ratio_poulets_n << "\%\t" << ratio_poulets_v << "\%" << endl;
         cout << " " << team::get_type(PANDA) << " Pandas\t\t\t" <<  ratio_pandas_n << "\%\t" << ratio_pandas_v << "\%" << endl;
         cout << " " << team::get_type(AUTRUCHE) << " Autruches\t\t\t" <<  ratio_autruches_n << "\%\t" << ratio_autruches_v << "\%" << endl;
@@ -176,7 +219,7 @@ using namespace std;
         cout << "Ultimate des poulets indisponible" << endl;
         cout << "Ultimate des pandas = +" << pandas_ultimate << "\% de vie de l'équipe" << endl;
         cout << "Ultimate des autruches = +" << autruches_v << " poulets" << endl;
-        cout << "---------------------------------------------" << endl;
+        cout << "---------------------FIN---------------------" << endl;
         cout << endl;
     }
 

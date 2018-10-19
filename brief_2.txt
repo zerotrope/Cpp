@@ -1,5 +1,6 @@
 Changements
-	debriefing
+	debriefing()
+	attaquer()
 	
 To do
 	1. Rapport interne = Nb de guerrier / présentation au-dessus/en-dessous de la ligne
@@ -8,4 +9,10 @@ To do
 	4. kill guerrier à la fin du jeu pas avant (pérénité pointeurs, cycles vie/mort/posture
 
 Mot clé : singleton
-	
+
+Questions
+	team::attaquer(team &target)?
+	Comment accéder au vecteur liste de la team target?
+	point sur std::vector<guerrier*>::iterator it; ??
+
+	!!! * !!! constructeurs par défaut et surchargés vs création
