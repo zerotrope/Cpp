@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <math.h> 
 
 #include "team.h"
 #include "guerrier.h"
@@ -162,7 +163,6 @@ using namespace std;
 
     void team::attaquer()
     {
-        // Attack
         std::vector<guerrier*>::iterator it;
         for(it=team::liste.begin(); it!=team::liste.end(); ++it)
         {
@@ -178,14 +178,13 @@ using namespace std;
         int team_vp = team::get_vie_potentielle();
         int team_vi = team::get_vie_initiale();
         int ratio_team_n = team_n / (team::poulets + team::superpoulets + team::pandas + team::autruches) * 100;
-        int ratio_team_v = team_v / team_vp;
+        float ratio_team_v = round((float)team_v / (float)team_vp * 100.0);
 
         int poulets_n = team::get_type(POULET);
         int poulets_v = team::get_vie(POULET);
         int poulets_vp = poulets_n * 10;
-        int ratio_poulets_n = poulets_n / team::poulets * 100;
-        //float ratio_poulets_v = poulets_v / team::poulets * 10;
-        float ratio_poulets_v = ((float)poulets_v / ((float)team::poulets * 10,0)) * 100,0;
+        float ratio_poulets_n = round((float)poulets_n / (float)team::poulets * 100);
+        float ratio_poulets_v = round(((float)poulets_v / ((float)team::poulets * 10.0)) * 100.0);
         cout << poulets_v << endl;
 
         int superpoulets_n = team::get_type(SUPERPOULET);
@@ -195,15 +194,15 @@ using namespace std;
         int pandas_n = team::get_type(PANDA);
         int pandas_v = team::get_vie(PANDA);
         int pandas_vp = pandas_n * 100;
-        int ratio_pandas_n = pandas_n / team::pandas * 100;
-        int ratio_pandas_v = pandas_v / (team::pandas * 100) * 100;
-        int pandas_ultimate = pandas_v * 0.5 / team_vp * 100;
+        float ratio_pandas_n = round((float)pandas_n / (float)team::pandas * 100.0);
+        float ratio_pandas_v = round((float)pandas_v / (float)team::pandas);
+        float pandas_ultimate = round((float)(pandas_v * 0.5) / (float)team_vp * 100.0);
 
         int autruches_n = team::get_type(AUTRUCHE);
         int autruches_v = team::get_vie(AUTRUCHE);
         int autruches_vp = autruches_n * 50;
-        int ratio_autruches_n = autruches_n / team::autruches * 100;
-        int ratio_autruches_v = autruches_v / (team::autruches * 50) * 100;
+        float ratio_autruches_n = round((float)autruches_n / (float)team::autruches * 100.0);
+        float ratio_autruches_v = round((float)autruches_v / (float)(team::autruches * 50.0) * 100.0);
 
         cout << endl;
         cout << "---------------RAPPORT INTERNE---------------" << endl;

@@ -11,8 +11,27 @@ To do
 Mot clé : singleton
 
 Questions
-	team::attaquer(team &target)?
-	Comment accéder au vecteur liste de la team target?
-	point sur std::vector<guerrier*>::iterator it; ??
-
 	!!! * !!! constructeurs par défaut et surchargés vs création
+
+Routine ajout nouvel attribut au sein d'une classe en cours de route
+ - Get
+ - Set
+ - Initialisation constructeurs
+
+Notes
+ guerrier et plus généralement toutes les classes modèles ne doivent pas faire de cout
+
+Debugs
+ - guerrier::attaquer()
+ - team::attaquer()
+
+To do
+ - DEBUG team::debriefing()
+ - team::analyse() : définir posture (defense y/n)
+ - team::analyse() : définir target
+ - fichier sortie cerr ?
+ - commandes Makefile verbeux/muet?
+
+ NEXT
+  - alléger/retirer les lignes de DEBUG
+  - alternative : cerr !
