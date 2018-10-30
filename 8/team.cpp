@@ -108,7 +108,7 @@ using namespace std;
 
     void team::analyse()
     {
-        /*
+/*
         Pour team & target :
             santé totale et par race
             stats :
@@ -120,9 +120,8 @@ using namespace std;
         scoring
         comparaison par ratios team vs. target
         nombre de tours min/max avant victoire/défaite
-        */
 
-        int i;
+        ------------------------------------------------------
 
         // from local team
         int team_n = team::get_survivants();
@@ -136,8 +135,8 @@ using namespace std;
         int team_autruches_n = team::get_type(AUTRUCHE);
         int team_autruches_v = team::get_vie(AUTRUCHE);
 
-        // from target target
-/*        
+        // from target team
+        
         int target_n = target.get_survivants();
         int target_v = target.get_vie_totale();
         int target_poulets_n = target.get_type(POULET);
@@ -155,10 +154,24 @@ using namespace std;
         int up_pandas = std::max(team_pandas_n, target_pandas_n);
         int up_autruches = std::max(team_autruches_n, target_autruches_n);
 
-        // Sanity checks
-        cout << up_poulets << " poulets maximums" << endl;
-        cout << target.get_nom() << endl;
+        ------------------------------------------------------
 */
+
+        // Définir posture
+        std::vector<guerrier*>::iterator it;
+        for(it=team::liste.begin(); it!=team::liste.end(); ++it)
+        {
+           (*it)->setDefending(true);
+           //(*it)->prendre_decision(); // DEBUG
+        }
+
+        for(it=team::liste.begin(); it!=team::liste.end(); ++it)
+        {
+            (*it)->isDefending();
+        }
+
+        // Définir target
+
     }
 
     void team::attaquer()
@@ -166,7 +179,7 @@ using namespace std;
         std::vector<guerrier*>::iterator it;
         for(it=team::liste.begin(); it!=team::liste.end(); ++it)
         {
-           (*it)->prendre_decision(); // DEBUG
+           //(*it)->prendre_decision(); // DEBUG
            (*it)->attaquer();
         }
     }

@@ -29,13 +29,13 @@ void panda::prendre_decision()
     {
         cout << "J'men fout je suis un panda je fais ce que je veux, JE DEFENDS!! " << endl;
         cout << endl;
-        //guerrier::setDefending(false);
+        guerrier::setDefending(false); // auparavant commentée
     }
     else
     {
         cout << "J'men fout je suis un panda je fais ce que je veux, J'ATTAQUE!! " << endl;
         cout << endl;
-        //guerrier::setDefending(true);
+        guerrier::setDefending(true); // auparavant commentée
     }
 }
 

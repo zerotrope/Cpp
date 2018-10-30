@@ -108,7 +108,7 @@ using namespace std;
         guerrier::attaquer(*guerrier::target);
     }
 
-    /*
+/*
     void guerrier::prendre_decision()
     {
         int random = rand()%100;
@@ -143,7 +143,7 @@ using namespace std;
             cout << guerrier::getNom() << " attaque (" << guerrier::force << " points de force)" << endl;
         }
     }
-    */
+*/
 
     void guerrier::cri_guerre()
     {
@@ -216,6 +216,7 @@ using namespace std;
     void guerrier::setDefending(bool decision)
     {
         guerrier::defense_active = decision;
+        //cout << "debug" << endl; // DEBUG
     }
 
     Type guerrier::getType()

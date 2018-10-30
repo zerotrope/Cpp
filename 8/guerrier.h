@@ -29,7 +29,6 @@ class guerrier
         void setNom(std::string nom);
         void setForce(int nouveau);
         void setDefense(int nouveau);
-        void setDefending(bool decision);
 
         int &getDefense();
         int getForce();
@@ -43,9 +42,9 @@ class guerrier
 
         virtual void attaquer(guerrier &target);
         virtual void prendre_decision() = 0;
-        void cri_guerre();
         virtual std::string blabla() = 0;
         virtual void attaquer();
+        void cri_guerre();
 
         void setVie(int nouveau);
         int &getVie();
@@ -54,6 +53,7 @@ class guerrier
         Type getType();
         guerrier *getTarget();
         void setTarget(guerrier *new_target);
+        void setDefending(bool decision);
 };
 
 #endif

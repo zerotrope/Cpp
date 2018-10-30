@@ -25,15 +25,14 @@ int main()
     team *team_C;
 
     // Malloc
+    team_A = new team("Ketchup", 10, 5, 5);
+    team_B = new team("Mayo", 10, 5, 5);
+    team_C = new team("Mustard", 10, 5, 5);
 /*  
     team_A = new team("Ketchup");
     team_B = new team("Mayo");
     team_C = new team();
 */
-    team_A = new team("Ketchup", 10, 5, 5);
-    team_B = new team("Mayo", 10, 5, 5);
-    team_C = new team("Mustard", 10, 5, 5);
-
     // Creation
 /*
     team_A->creation();
@@ -46,50 +45,9 @@ int main()
     team_C->debriefing();
 
     team_A->attaquer();
-
     team_A->debriefing();
 
-/*
-    // Creation
-    team_A->team();
-    team_B->team();
+    team_A->analyse();
 
-    cout << "Combien d'action souhaitez-vous : ";
-    cin >> actions;
-    if(actions <= 0)
-    {
-        actions = 0;
-        cout << "Chaque équipe pourra réaliser autant d'actions que de membres" << endl;
-    }
-    team_A->set_actions(actions);
-    team_B->set_actions(actions);
-
-    while(team_A->get_survivants() > 0 && team_B->get_survivants() > 0 && reponse == 1)
-    {
-        cout << "Êtes-vous prêt pour le tour n°" << tour << "? (1 pour oui / 0 pour quitter)" << endl;
-        cin >> reponse;
-        if(reponse == 1)
-        {
-            team_A->analyse_situation(team_B);
-            team_B->analyse_situation(team_A);
-                                                // apres les fonctions creations, et les gets, commentez de 49 à 53 pour tests
-            team_A->attaquer(team_B);
-            team_B->attaquer(team_A);
-
-            team_A->debriefing();               // debrief par team effectif des races, pourcentage de vie globale? (implique stocker l'initial)
-            team_B->debriefing();               // debrief du tour (cb de morts...etc.)
-        }
-        tour++;
-    }
-    if(reponse == 1)
-    {
-        if(team_A->get_survivants() == 0 && team_B->get_survivants() == 0)
-            cout << "Egalité!!" << endl;
-        else if(team_A->get_survivants() == 0)
-            cout << "L'équipe " << team_B->get_nom() << " remporte le combat !" << endl;
-        else
-            cout << "L'équipe " << team_A->get_nom() << " remporte le combat !" << endl;
-    }
-*/
     return 0;
 }
