@@ -1,22 +1,22 @@
 Changes
 	- panda.cpp 32 & 38: guerrier::setDefending(inverse)
 
-Done
-	- DEBUG team::debriefing()
-	
 To do
-	- analyse/prise de décision (focus race par exemple) dans team
-	- team::analyse() : définir posture (defense y/n)
-	- team::analyse() : définir target
-	- fichier sortie cerr ?
-	- commandes Makefile verbeux/muet?	
+	- analyse/prise de décision (focus race par exemple) dans team	
 	- team::analyse() = *réflexion* pointeur guerrier d'en face, choix architectural sur pointeur = NULL si mort ou pas?
 	- kill guerrier à la fin du jeu pas avant (pérénité pointeurs, cycles vie/mort/posture...)
 	- team::debriefing() : quand plus de guerriers, division par 0 ("nans") solution: ne pas afficher la ligne lorsque pas de guerrier initial?
 	- Point références
+	- fichier sortie cerr ?
+	- commandes Makefile verbeux/muet?
+
+Done
+	- DEBUG team::debriefing()
+	- team::analyse() : définir posture (defense y/n)
+	- team::analyse() : définir target
 
 Notes
-	- guerrier et plus généralement toutes les classes modèles ne doivent - pas faire de cout
+	- guerrier et plus généralement toutes les classes modèles ne doivent pas faire de cout
 	- Routine ajout nouvel attribut au sein d'une classe en cours de route
 		- Get
 		- Set
