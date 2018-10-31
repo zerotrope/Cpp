@@ -5,12 +5,15 @@ Done
 	- DEBUG team::debriefing()
 	
 To do
+	- analyse/prise de décision (focus race par exemple) dans team
 	- team::analyse() : définir posture (defense y/n)
 	- team::analyse() : définir target
 	- fichier sortie cerr ?
 	- commandes Makefile verbeux/muet?	
 	- team::analyse() = *réflexion* pointeur guerrier d'en face, choix architectural sur pointeur = NULL si mort ou pas?
 	- kill guerrier à la fin du jeu pas avant (pérénité pointeurs, cycles vie/mort/posture...)
+	- team::debriefing() : quand plus de guerriers, division par 0 ("nans") solution: ne pas afficher la ligne lorsque pas de guerrier initial?
+	- Point références
 
 Notes
 	- guerrier et plus généralement toutes les classes modèles ne doivent - pas faire de cout
@@ -19,11 +22,15 @@ Notes
 		- Set
 		- Initialisation constructeurs
 	- Mot clé : singleton
-
-Debugs
- - guerrier::attaquer()
- - team::attaquer()
+	- !!!!! * !!!!! : pas d'accessibilité sur 3 niveaux de l'itérateur (target.getListe().end())
 
  NEXT
   - alléger/retirer les lignes de DEBUG
   - alternative : cerr !
+  - !!! * !!! TEMPLATES !!! * !!!
+
+ Architecture
+  - définition de la mort dans attaque() par des setVie()
+  - méthode guerrier::mourir?
+  - méthode guerrier::encaisser?
+  - méthode guerrier::récussiter? -> flag "mort" mais pas de destruction

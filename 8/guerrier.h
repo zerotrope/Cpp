@@ -23,7 +23,7 @@ class guerrier
         Type type_guerrier;
         bool defense_active;
         guerrier *target;
-
+        bool dead;
 
     protected:
         void setNom(std::string nom);
@@ -54,6 +54,7 @@ class guerrier
         guerrier *getTarget();
         void setTarget(guerrier *new_target);
         void setDefending(bool decision);
+        bool isDead();
 };
 
 #endif

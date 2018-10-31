@@ -19,6 +19,7 @@ using namespace std;
         guerrier::type_guerrier = SANS_TYPE;
         guerrier::defense_active = false;
         guerrier::target = NULL;
+        guerrier::dead = false;
     }
 
     guerrier::guerrier(std::string _nom, Type _type_guerrier, int _vie, int _force, int _defense)
@@ -37,6 +38,7 @@ using namespace std;
         guerrier::type_guerrier = _type_guerrier;
         guerrier::defense_active = false;
         guerrier::target = NULL;
+        guerrier::dead = false;
     }
 
     guerrier::~guerrier()
@@ -62,18 +64,18 @@ using namespace std;
                 // Si le capital défense au moment de l'attaque est déjà consommé, alors c'est le capital vie de la cible qui sera directement consommé
                 else if (target.getDefense() == 0)
                 {
-                    target.getVie() = target.getVie() - guerrier::force;
+                    target.setVie(target.getVie() - guerrier::force);
                 }
                 // Sinon, lorsque l'attaque est supérieure au capital défense existant, c'est la totalité du capital défense qui est consommé et le résidu qui entamme le capital vie
                 else
                 {
-                    target.getVie() = target.getVie() - (guerrier::force - target.getDefense());
+                    target.setVie(target.getVie() - (guerrier::force - target.getDefense()));
                     target.getDefense() = 0;
                 }
             }
             else
             {
-                target.getVie() = 0;
+                target.setVie(0);
                 target.getDefense() = 0;
                 //cout << target.getNom() << " est tombé!" << endl;
             }
@@ -82,7 +84,7 @@ using namespace std;
         {
             if(target.getVie() > guerrier::force)
             {
-                target.getVie() = target.getVie() - guerrier::force;
+                target.setVie(target.getVie() - guerrier::force);
                 //cout << guerrier::getNom() << " frappe " << target.getNom() << endl;
             }
             else
@@ -99,7 +101,7 @@ using namespace std;
 
         void guerrier::attaquer() // surchargée
     {
-        guerrier::setTarget(this); // DEBUG
+        //guerrier::setTarget(this); // DEBUG
         if(guerrier::target == NULL)
         {
             cerr << "pas de cible" << endl;
@@ -163,8 +165,11 @@ using namespace std;
     void guerrier::setVie(int nouveau)
     {
         guerrier::vie = nouveau;
-        if(nouveau < 0)
-            guerrier::vie = 10;
+        if(nouveau <= 0)
+        {
+            guerrier::vie = 0; 
+            guerrier::dead = true;   
+        }
     }
 
     void guerrier::setForce(int nouveau)
@@ -222,4 +227,9 @@ using namespace std;
     Type guerrier::getType()
     {
         return guerrier::type_guerrier;
+    }
+
+    bool guerrier::isDead()
+    {
+        return guerrier::dead;
     }

@@ -25,8 +25,8 @@ int main()
     team *team_C;
 
     // Malloc
-    team_A = new team("Ketchup", 10, 5, 5);
-    team_B = new team("Mayo", 10, 5, 5);
+    team_A = new team("Ketchup", 0, 20, 0);
+    team_B = new team("Mayo", 50, 0, 0);
     team_C = new team("Mustard", 10, 5, 5);
 /*  
     team_A = new team("Ketchup");
@@ -43,11 +43,9 @@ int main()
     team_A->debriefing();
     team_B->debriefing();
     team_C->debriefing();
-
+    team_A->analyse(team_B);
     team_A->attaquer();
-    team_A->debriefing();
-
-    team_A->analyse();
+    team_B->debriefing();
 
     return 0;
 }

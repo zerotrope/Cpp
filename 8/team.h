@@ -26,7 +26,7 @@ class team
         ~team();
 
         void creation();
-        void analyse();
+        void analyse(team *target);
         void attaquer();
         void debriefing();
 
@@ -39,6 +39,8 @@ class team
         int get_vie_totale();
         int get_vie_potentielle();
         int get_vie_initiale();
+
+        std::vector<guerrier*> getListe();
 
         // team_creation() : demande au user combien de poulets, pandas, autruches
         // prise de décision pour l'équipe totale en fonction de son état
