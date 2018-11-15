@@ -23,8 +23,11 @@ Notes
 		- Initialisation constructeurs
 	- Mot clé : singleton
 	- !!!!! * !!!!! : pas d'accessibilité sur 3 niveaux de l'itérateur (target.getListe().end())
+	- team::attaquer(): if(attaque spé) elseif(isDefending()?) else(attaquer())
 
  NEXT
+  - Surcharge opérateurs
+  - point références
   - alléger/retirer les lignes de DEBUG
   - alternative : cerr !
   - !!! * !!! TEMPLATES !!! * !!!
