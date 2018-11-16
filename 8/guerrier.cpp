@@ -93,10 +93,10 @@ using namespace std;
                 //cout << "Votre ennemi " << target.getNom() << " est tombé!" << endl;
             }
         }
-        cout << endl;
         cout << target.getNom() << " dispose de :" << endl;
         cout << target.getVie() << " points de vie" << endl;
         cout << target.getDefense() << " points de défense" << endl;
+        cout << endl;
     }
 
         void guerrier::attaquer() // surchargée

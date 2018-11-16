@@ -15,6 +15,7 @@ class team
         int superpoulets;
         int pandas;
         int autruches;
+        int deads;
 
     protected:
 
@@ -39,6 +40,7 @@ class team
         int get_vie_totale();
         int get_vie_potentielle();
         int get_vie_initiale();
+        int get_deads();
 
         std::vector<guerrier*> getListe();
 

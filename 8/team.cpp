@@ -22,6 +22,7 @@ using namespace std;
         team::superpoulets = 1;
         team::pandas = 5;
         team::autruches = 5;
+        team::deads = 0;
     }
 
     // Constructeur surchargé à 1 paramètre
@@ -32,6 +33,7 @@ using namespace std;
         team::superpoulets = 1;
         team::pandas = 5;
         team::autruches = 5;
+        team::deads = 0;
     }
 
     // Constructeur surchargé
@@ -62,6 +64,7 @@ using namespace std;
         team::poulets = _poulets;
         team::pandas = _pandas;
         team::autruches = _autruches;
+        team::deads = 0;
         cout << "L'équipe " << team::nom << " est composée de " << team::get_survivants() << " guerriers" << endl;
     }
 
@@ -186,7 +189,6 @@ using namespace std;
         for(it=team::liste.begin(); it!=team::liste.end(); ++it)
         {
            cout << (*it)->getNom() << endl;
-           //(*it)->prendre_decision(); // DEBUG
            (*it)->attaquer();
         }
     }
@@ -221,7 +223,8 @@ using namespace std;
         int autruches_v = team::get_vie(AUTRUCHE);
         int autruches_vp = autruches_n * 50;
         float ratio_autruches_n = round((float)autruches_n / (float)team::autruches * 100.0);
-        float ratio_autruches_v = round((float)autruches_v / (float)(team::autruches * 50.0) * 100.0);
+        float ratio_autruches_v = round((float)autruches_v / (float)(team::autruches * 50.0) * 100.0);            
+
 
         cout << endl;
         cout << "---------------RAPPORT INTERNE---------------" << endl;
@@ -309,6 +312,11 @@ using namespace std;
         int vie_autruches = team::autruches * 50;
         vie = vie_poulets + vie_superpoulets + vie_pandas + vie_autruches;
         return vie;
+    }
+
+    int team::get_deads()
+    {
+        return team::deads;
     }
 
     std::vector<guerrier*> team::getListe()
