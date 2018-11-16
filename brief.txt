@@ -26,11 +26,13 @@ Notes
 	- team::attaquer(): if(attaque spé) elseif(isDefending()?) else(attaquer())
 
  NEXT
+  - Templates  
   - Surcharge opérateurs
   - point références
   - alléger/retirer les lignes de DEBUG
   - alternative : cerr !
-  - !!! * !!! TEMPLATES !!! * !!!
+  - Singleton
+  - Design pattern (factory)
 
  Architecture
   - définition de la mort dans attaque() par des setVie()
