@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <math.h> 
+#include <math.h>
 
 #include "team.h"
 #include "guerrier.h"
@@ -139,7 +139,7 @@ using namespace std;
         int team_autruches_v = team::get_vie(AUTRUCHE);
 
         // from target team
-        
+
         int target_n = target.get_survivants();
         int target_v = target.get_vie_totale();
         int target_poulets_n = target.get_type(POULET);
@@ -207,7 +207,7 @@ using namespace std;
         int poulets_vp = poulets_n * 10;
         float ratio_poulets_n = round((float)poulets_n / (float)team::poulets * 100);
         float ratio_poulets_v = round(((float)poulets_v / ((float)team::poulets * 10.0)) * 100.0);
-        
+
         int superpoulets_n = team::get_type(SUPERPOULET);
         int superpoulets_v = team::get_vie(SUPERPOULET);
         int superpoulets_vp = superpoulets_n * 1000;
@@ -223,7 +223,7 @@ using namespace std;
         int autruches_v = team::get_vie(AUTRUCHE);
         int autruches_vp = autruches_n * 50;
         float ratio_autruches_n = round((float)autruches_n / (float)team::autruches * 100.0);
-        float ratio_autruches_v = round((float)autruches_v / (float)(team::autruches * 50.0) * 100.0);            
+        float ratio_autruches_v = round((float)autruches_v / (float)(team::autruches * 50.0) * 100.0);
 
 
         cout << endl;

@@ -2,40 +2,40 @@ Changes
 	- panda.cpp 32 & 38: guerrier::setDefending(inverse)
 
 To do
-	- analyse/prise de décision (focus race par exemple) dans team	
-	- team::analyse() = *réflexion* pointeur guerrier d'en face, choix architectural sur pointeur = NULL si mort ou pas?
-	- kill guerrier à la fin du jeu pas avant (pérénité pointeurs, cycles vie/mort/posture...)
+	- analyse/prise de decision (focus race par exemple) dans team
+	- team::analyse() = *reflexion* pointeur guerrier d'en face, choix architectural sur pointeur = NULL si mort ou pas?
+	- kill guerrier a la fin du jeu pas avant (perenite pointeurs, cycles vie/mort/posture...)
 	- team::debriefing() : quand plus de guerriers, division par 0 ("nans") solution: ne pas afficher la ligne lorsque pas de guerrier initial?
-	- Point références
+	- Point references
 	- fichier sortie cerr ?
 	- commandes Makefile verbeux/muet?
 
 Done
 	- DEBUG team::debriefing()
-	- team::analyse() : définir posture (defense y/n)
-	- team::analyse() : définir target
+	- team::analyse() : definir posture (defense y/n)
+	- team::analyse() : definir target
 
 Notes
-	- guerrier et plus généralement toutes les classes modèles ne doivent pas faire de cout
+	- guerrier et plus generalement toutes les classes modï¿½les ne doivent pas faire de cout
 	- Routine ajout nouvel attribut au sein d'une classe en cours de route
 		- Get
 		- Set
 		- Initialisation constructeurs
-	- Mot clé : singleton
-	- !!!!! * !!!!! : pas d'accessibilité sur 3 niveaux de l'itérateur (target.getListe().end())
-	- team::attaquer(): if(attaque spé) elseif(isDefending()?) else(attaquer())
+	- Mot cle : singleton
+	- !!!!! * !!!!! : pas d'accessibilite sur 3 niveaux de l'itï¿½rateur (target.getListe().end())
+	- team::attaquer(): if(attaque spe) elseif(isDefending()?) else(attaquer())
 
  NEXT
-  - Templates  
-  - Surcharge opérateurs
-  - point références
-  - alléger/retirer les lignes de DEBUG
+  - Templates
+  - Surcharge operateurs
+  - point references
+  - alleger/retirer les lignes de DEBUG
   - alternative : cerr !
   - Singleton
   - Design pattern (factory)
 
  Architecture
-  - définition de la mort dans attaque() par des setVie()
-  - méthode guerrier::mourir?
-  - méthode guerrier::encaisser?
-  - méthode guerrier::récussiter? -> flag "mort" mais pas de destruction
+  - definition de la mort dans attaque() par des setVie()
+  - methode guerrier::mourir?
+  - methode guerrier::encaisser?
+  - methode guerrier::recussiter? -> flag "mort" mais pas de destruction
