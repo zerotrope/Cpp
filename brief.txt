@@ -1,29 +1,22 @@
-Changes
-	- panda.cpp 32 & 38: guerrier::setDefending(inverse)
-
 To do
-	- analyse/prise de decision (focus race par exemple) dans team
+  - exercise surcharge & design pattern (other examples of existing desing patterns like singleton?)
+	- Find a example of "Design pattern factory?" own example from literature
+	- team::analyse() : operator overloading examples of applications
+
+Notes
+	- "model" classes shoudnt cout
+	- New attribute routine process
+		- Get function
+		- Set function
+		- Initialisations in constructors
+	- design patterns are existing code architecture with specific design/rules ie. singleton
 	- team::analyse() = *reflexion* pointeur guerrier d'en face, choix architectural sur pointeur = NULL si mort ou pas?
+	- analyse/prise de decision (focus race par exemple) dans team
 	- kill guerrier a la fin du jeu pas avant (perenite pointeurs, cycles vie/mort/posture...)
 	- team::debriefing() : quand plus de guerriers, division par 0 ("nans") solution: ne pas afficher la ligne lorsque pas de guerrier initial?
 	- Point references
 	- fichier sortie cerr ?
 	- commandes Makefile verbeux/muet?
-
-Done
-	- DEBUG team::debriefing()
-	- team::analyse() : definir posture (defense y/n)
-	- team::analyse() : definir target
-
-Notes
-	- guerrier et plus generalement toutes les classes mod�les ne doivent pas faire de cout
-	- Routine ajout nouvel attribut au sein d'une classe en cours de route
-		- Get
-		- Set
-		- Initialisation constructeurs
-	- Mot cle : singleton
-	- !!!!! * !!!!! : pas d'accessibilite sur 3 niveaux de l'it�rateur (target.getListe().end())
-	- team::attaquer(): if(attaque spe) elseif(isDefending()?) else(attaquer())
 
  NEXT
   - Templates

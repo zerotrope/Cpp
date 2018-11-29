@@ -47,6 +47,23 @@ class calcul
 		int get_b() const;
 };
 
+bool operator>(int const& gauche, calcul const& droite)
+{
+	cout << "coucou int > calcul?" << endl;
+	if(gauche > (droite.get_a() + droite.get_b()))
+	{
+		return true;
+	}
+	return false;
+}
+
+/* Cas impossible car au moins avoir un élément de type classe (qui t'est propre) non générique
+int operator+(int const& gauche, int const& droite)
+{
+	cout << "cheating maths test?" << endl;
+	return(gauche * droite);
+}
+*/
 int calcul::get_a() const
 {
 	return calcul::a;
@@ -75,7 +92,7 @@ int main()
 	//calcul *toto;
 	//toto = new calcul(3,6);
 
-	calcul titi(16,3);
+	calcul titi(250,3);
 	//calcul *titi;
 	//titi = new calcul(6,3);
 
@@ -100,13 +117,14 @@ int main()
 
 	// si Titi > 250 alors afficher "Titi est superieur a 250"
 	// Check addition de a et b si > 250
+	int valeur = 250;
 
-	if(titi > 250)
+	if(valeur > titi)
 	{
-		cout << "Titi superieur a 250" << endl;
+		cout << "Titi inferieur a 250" << endl;
 	}
 	else
 	{
-		cout << "Titi inferieur a 250" << endl;
+		cout << "Titi superieur a 250" << endl;
 	}
 }
