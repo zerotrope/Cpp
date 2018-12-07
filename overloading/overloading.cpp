@@ -13,9 +13,9 @@ class calcul
 		calcul();
 		calcul(int _a, int _b);
 
-		bool operator==(calcul const& x) // x est "l'autre coté"
+		bool operator==(calcul const& x) // x is "the other side"
 		{
-			cout << "coucou == vs class attributes" << endl;
+			cout << "operator== vs class attributes" << endl;
 			if((a+b) == (x.get_a()+x.get_b()))
 			{
 				return true;
@@ -25,7 +25,7 @@ class calcul
 
 		bool operator>(calcul const& x)
 		{
-			cout << "coucou > vs class attributes" << endl;
+			cout << "operator> vs class attributes" << endl;
 			if((a+b) > (x.get_a()+x.get_b()))
 			{
 				return true;
@@ -35,7 +35,7 @@ class calcul
 
 		bool operator>(int const& x)
 		{
-			cout << "coucou > vs const int" << endl;
+			cout << "operator> vs const int" << endl;
 			if((a+b) > x)
 			{
 				return true;
@@ -49,7 +49,7 @@ class calcul
 
 bool operator>(int const& gauche, calcul const& droite)
 {
-	cout << "coucou int > calcul?" << endl;
+	cout << "type int operator> to type calcul?" << endl;
 	if(gauche > (droite.get_a() + droite.get_b()))
 	{
 		return true;
@@ -57,8 +57,8 @@ bool operator>(int const& gauche, calcul const& droite)
 	return false;
 }
 
-/* Cas impossible car au moins avoir un élément de type classe (qui t'est propre) non générique
-int operator+(int const& gauche, int const& droite)
+/* Impossible case bacause at least one element of type class (own type, ie here "calcul" type) non-generic is required.
+int operator+(int const& left, int const& right)
 {
 	cout << "cheating maths test?" << endl;
 	return(gauche * droite);
@@ -99,32 +99,32 @@ int main()
 	// par défaut "==" vérifie si les pointeurs pointent vers la même adresse
 	if(titi == toto) // equivalent à : titi.operator==(toto)
 	{
-		cout << "Titi est egal a Toto" << endl;
+		cout << "Titi equals Toto" << endl;
 	}
 	else
 	{
-		cout << "Titi n'est pas egal Toto" << endl;
+		cout << "Titi does not equal Toto" << endl;
 	}
 
 	if(titi > toto)
 	{
-		cout << "Titi superieur a Toto" << endl;
+		cout << "Titi greater than Toto" << endl;
 	}
 	else
 	{
-		cout << "Titi inferieur a Toto" << endl;
+		cout << "Titi smaller than Toto" << endl;
 	}
 
 	// si Titi > 250 alors afficher "Titi est superieur a 250"
 	// Check addition de a et b si > 250
-	int valeur = 250;
+	int value = 250;
 
-	if(valeur > titi)
+	if(value > titi)
 	{
-		cout << "Titi inferieur a 250" << endl;
+		cout << "Titi greater than 250" << endl;
 	}
 	else
 	{
-		cout << "Titi superieur a 250" << endl;
+		cout << "Titi smaller than 250" << endl;
 	}
 }

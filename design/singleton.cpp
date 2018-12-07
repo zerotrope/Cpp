@@ -8,7 +8,7 @@ class singleton
   private:
     int a;
     int b;
-    static singleton *ptr;    // bloque sa création de nouveaux éléments en private
+    static singleton *ptr;    // prevents the creation of new private elements
 
     singleton()
     {
@@ -68,7 +68,7 @@ int main()
 {
   singleton *toto = singleton::get();
   singleton *titi = singleton::get();
-  cout << toto <<  " " << titi << endl; // check des adresses de toto et titi censées égales
+  cout << toto <<  " " << titi << endl; // check toto & titi addresses supposedly equal
 
   singleton *tutu = singleton::get(1,5);
   cout << tutu->get_a() << " " << tutu->get_b() << endl;

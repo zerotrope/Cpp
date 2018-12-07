@@ -167,8 +167,8 @@ using namespace std;
         guerrier::vie = nouveau;
         if(nouveau <= 0)
         {
-            guerrier::vie = 0;
-            guerrier::dead = true;
+            guerrier::vie = 0; 
+            guerrier::dead = true;   
         }
     }
 
